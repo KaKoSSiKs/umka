@@ -47,15 +47,15 @@ curl -fsSL https://get.docker.com | sh
 systemctl enable --now docker
 ```
 
-Откройте порт **84** в firewall (пример для ufw):
+Откройте порт **8084** в firewall (пример для ufw):
 
 ```bash
 ufw allow OpenSSH
-ufw allow 84/tcp
+ufw allow 8084/tcp
 ufw enable
 ```
 
-HTTP сайта слушает хостовый порт **84** (внутри контейнера по-прежнему 80). Порты 80 и 443 на хосте заняты системным nginx — Docker их не занимает.
+HTTP сайта слушает хостовый порт **8084** (внутри контейнера по-прежнему 80). Порты 80 и 443 на хосте заняты системным nginx — Docker их не занимает.
 
 ---
 
@@ -94,70 +94,71 @@ docker compose up -d --build
 
 Проверьте:
 
-- по IP: `http://91.240.85.2:84`
-- по домену: `http://умка.москва:84`
+- по IP: `http://91.240.85.2:8084`
+- по домену: `http://умка.москва:8084`
 
 ---
 
-## 5. Получение SSL (Let's Encrypt)
+## 5. Хостовый nginx (прокси на порт 8084)
 
-Сейчас контейнер слушает только порт **84**. Порты 80/443 заняты хостовым nginx, поэтому HTTPS удобнее делать через **прокси на хосте**:
+Контейнер `umka-web` уже слушает `127.0.0.1:8084`. Системный nginx на 80/443 должен проксировать домен на этот порт.
 
-1. Хостовый nginx принимает `умка.москва` на 80/443.
-2. Проксирует на `http://127.0.0.1:84`.
-3. Сертификат выдаёте certbot’ом на хосте (`certbot --nginx` или webroot).
+Готовый файл: [`host-nginx/umka.moscow.conf`](host-nginx/umka.moscow.conf).
 
-Пример server-блока на хосте (после получения сертификата пути подставит certbot):
-
-```nginx
-server {
-    listen 80;
-    server_name умка.москва xn--80atf1a.xn--80adxhks;
-
-    location / {
-        proxy_pass http://127.0.0.1:84;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-    }
-}
-```
-
-Альтернатива без хостового nginx: временно освободить 80/443, вернуть в `docker-compose.yml` порты `"80:80"` и `"443:443"`, и следовать схеме certbot из контейнера (как раньше).
-
-Опционально — certbot внутри Docker (нужен свободный порт 80):
+### Шаги на VPS
 
 ```bash
-docker compose run --rm certbot certonly \
-  --webroot \
-  --webroot-path=/var/www/certbot \
-  --email YOUR_EMAIL@example.com \
-  --agree-tos \
-  --no-eff-email \
-  -d xn--80atf1a.xn--80adxhks \
-  -d умка.москва
+# 1) Убедитесь, что контейнер работает
+docker ps | grep umka-web
+curl -I http://127.0.0.1:8084
+
+# 2) Скопируйте конфиг сайта
+cp /opt/umka/host-nginx/umka.moscow.conf /etc/nginx/sites-available/umka.moscow
+
+# 3) Включите сайт (Debian/Ubuntu)
+ln -sf /etc/nginx/sites-available/umka.moscow /etc/nginx/sites-enabled/umka.moscow
+
+# Если каталога sites-enabled нет (например, CentOS) —
+# положите файл в /etc/nginx/conf.d/umka.moscow.conf
+
+# 4) Проверка и перезагрузка
+nginx -t
+systemctl reload nginx
 ```
 
-Сертификаты появятся в:
+Проверьте HTTP (без порта 8084):
 
-`certbot/conf/live/xn--80atf1a.xn--80adxhks/`
+- `http://умка.москва`
+- `http://91.240.85.2` — откроется только если этот server стал default; надёжнее проверять по домену.
+
+DNS A-запись `умка.москва` → `91.240.85.2` должна уже указывать на сервер.
 
 ---
 
-## 6. Включение HTTPS (через хостовый nginx)
+## 6. HTTPS (certbot на хосте)
 
-SSL на хосте (рекомендуется при занятых 80/443):
+Установите certbot, если ещё нет:
 
 ```bash
-# после добавления server-блока с proxy_pass на 127.0.0.1:84
+apt install -y certbot python3-certbot-nginx
+```
+
+Выпустите сертификат (certbot сам допишет SSL в конфиг nginx):
+
+```bash
 certbot --nginx -d xn--80atf1a.xn--80adxhks -d умка.москва
+```
+
+Укажите email, согласитесь с условиями. Затем:
+
+```bash
 nginx -t && systemctl reload nginx
 ```
 
-Проверка: `https://умка.москва` (без `:84` — трафик идёт через хостовый nginx на 443).
+Проверка: `https://умка.москва` (без `:8084`).
 
-Включать `default-ssl.conf` внутри Docker-контейнера не нужно, пока 443 не проброшен в контейнер.
+Включать `default-ssl.conf` внутри Docker **не нужно** — SSL терминирует хостовый nginx.
+
 
 ---
 
@@ -209,13 +210,13 @@ docker compose up -d --build # запустить / пересобрать
 
 ## Если ошибка: `address already in use`
 
-Сейчас в compose только порт **84**. Проверка:
+Сейчас в compose только порт **8084**. Проверка:
 
 ```bash
-ss -tlnp | grep ':84'
+ss -tlnp | grep ':8084'
 ```
 
-Если 84 тоже занят — смените левую часть в `docker-compose.yml` (`"XXXX:80"`) на свободный порт.
+Если 8084 тоже занят — смените левую часть в `docker-compose.yml` (`"XXXX:80"`) на свободный порт.
 
 ---
 
@@ -227,4 +228,4 @@ ss -tlnp | grep ':84'
 docker compose up --build
 ```
 
-Откройте `http://localhost:84`. HTTPS настраивается только на VPS с валидным DNS.
+Откройте `http://localhost:8084`. HTTPS настраивается только на VPS с валидным DNS.

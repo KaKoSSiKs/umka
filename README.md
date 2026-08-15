@@ -9,6 +9,7 @@
 - `assets/` — логотип и фотографии из презентации проекта
 - `Dockerfile`, `docker-compose.yml`, `nginx/` — контейнер nginx для VPS
 - `DEPLOY.md` — размещение на сервере (умка.москва)
+- `host-nginx/` — конфиг системного nginx (прокси на порт 8084)
 
 ## Запуск локально
 Откройте `index.html` в браузере.
@@ -19,7 +20,7 @@
 docker compose up --build
 ```
 
-Сайт будет на `http://localhost:84`.
+Сайт будет на `http://localhost:8084`.
 
 ## Размещение на VPS
 Пошаговая инструкция (DNS, Docker, HTTPS): см. [DEPLOY.md](DEPLOY.md).

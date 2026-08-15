@@ -3,7 +3,7 @@ services:
     build: .
     container_name: umka-web
     ports:
-      - "84:80"
+      - "8084:80"
     volumes:
       - ./nginx:/etc/nginx/conf.d:ro
       - ./certbot/conf:/etc/letsencrypt:ro
