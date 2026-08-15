@@ -19,7 +19,7 @@
 docker compose up --build
 ```
 
-Сайт будет на `http://localhost`.
+Сайт будет на `http://localhost:84`.
 
 ## Размещение на VPS
 Пошаговая инструкция (DNS, Docker, HTTPS): см. [DEPLOY.md](DEPLOY.md).

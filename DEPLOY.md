@@ -47,14 +47,16 @@ curl -fsSL https://get.docker.com | sh
 systemctl enable --now docker
 ```
 
-Откройте порты 80 и 443 в firewall (пример для ufw):
+Откройте порты **84** (HTTP) и **443** (HTTPS) в firewall (пример для ufw):
 
 ```bash
 ufw allow OpenSSH
-ufw allow 80/tcp
+ufw allow 84/tcp
 ufw allow 443/tcp
 ufw enable
 ```
+
+HTTP сайта слушает хостовый порт **84** (внутри контейнера по-прежнему 80).
 
 ---
 
@@ -93,12 +95,21 @@ docker compose up -d --build
 
 Проверьте:
 
-- по IP: `http://91.240.85.2`
-- по домену: `http://умка.москва`
+- по IP: `http://91.240.85.2:84`
+- по домену: `http://умка.москва:84`
 
 ---
 
 ## 5. Получение SSL (Let's Encrypt)
+
+Let's Encrypt проверяет домен по **порту 80**. Пока сайт в Docker на порту 84, HTTP-01 через этот контейнер не сработает, если 80 занят хостовым nginx.
+
+Варианты:
+
+- временно остановить хостовый nginx, пробросить `80:80`, получить сертификат, вернуть схему с 84; или
+- настроить на хостовом nginx проксирование `/.well-known/acme-challenge/` в контейнер / общий webroot.
+
+Если порт 80 свободен для Docker — в `docker-compose.yml` добавьте `"80:80"` на время выдачи сертификата.
 
 Подставьте свой email:
 
@@ -187,6 +198,18 @@ docker compose down          # остановить
 docker compose up -d --build # запустить / пересобрать
 ```
 
+## Если ошибка: `address already in use` (порт 84 или 443)
+
+Кто занимает порт:
+
+```bash
+ss -tlnp | grep -E ':84|:443'
+```
+
+HTTP уже настроен на **84**. Если занят и 443 — либо освободите его (`systemctl stop nginx`), либо уберите строку `"443:443"` из `docker-compose.yml` до настройки SSL.
+
+---
+
 ## Локальная проверка (без SSL)
 
 На своём ПК:
@@ -195,4 +218,4 @@ docker compose up -d --build # запустить / пересобрать
 docker compose up --build
 ```
 
-Откройте `http://localhost`. HTTPS настраивается только на VPS с валидным DNS.
+Откройте `http://localhost:84`. HTTPS настраивается только на VPS с валидным DNS.
