@@ -1,0 +1,10 @@
+.git
+.gitignore
+certbot
+DEPLOY.md
+README.md
+*.md
+.dockerignore
+docker-compose.yml
+nginx/default-ssl.conf.disabled
+nginx/default.redirect.conf.example

@@ -1,0 +1,17 @@
+# Production HTTP: ACME + redirect to HTTPS.
+# After obtaining certificates, replace default.conf with this file:
+#   cp nginx/default.redirect.conf.example nginx/default.conf
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name умка.москва xn--80atf1a.xn--80adxhks;
+
+    location /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+    }
+
+    location / {
+        return 301 https://$host$request_uri;
+    }
+}
