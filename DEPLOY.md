@@ -47,16 +47,15 @@ curl -fsSL https://get.docker.com | sh
 systemctl enable --now docker
 ```
 
-Откройте порты **84** (HTTP) и **443** (HTTPS) в firewall (пример для ufw):
+Откройте порт **84** в firewall (пример для ufw):
 
 ```bash
 ufw allow OpenSSH
 ufw allow 84/tcp
-ufw allow 443/tcp
 ufw enable
 ```
 
-HTTP сайта слушает хостовый порт **84** (внутри контейнера по-прежнему 80).
+HTTP сайта слушает хостовый порт **84** (внутри контейнера по-прежнему 80). Порты 80 и 443 на хосте заняты системным nginx — Docker их не занимает.
 
 ---
 
@@ -102,16 +101,32 @@ docker compose up -d --build
 
 ## 5. Получение SSL (Let's Encrypt)
 
-Let's Encrypt проверяет домен по **порту 80**. Пока сайт в Docker на порту 84, HTTP-01 через этот контейнер не сработает, если 80 занят хостовым nginx.
+Сейчас контейнер слушает только порт **84**. Порты 80/443 заняты хостовым nginx, поэтому HTTPS удобнее делать через **прокси на хосте**:
 
-Варианты:
+1. Хостовый nginx принимает `умка.москва` на 80/443.
+2. Проксирует на `http://127.0.0.1:84`.
+3. Сертификат выдаёте certbot’ом на хосте (`certbot --nginx` или webroot).
 
-- временно остановить хостовый nginx, пробросить `80:80`, получить сертификат, вернуть схему с 84; или
-- настроить на хостовом nginx проксирование `/.well-known/acme-challenge/` в контейнер / общий webroot.
+Пример server-блока на хосте (после получения сертификата пути подставит certbot):
 
-Если порт 80 свободен для Docker — в `docker-compose.yml` добавьте `"80:80"` на время выдачи сертификата.
+```nginx
+server {
+    listen 80;
+    server_name умка.москва xn--80atf1a.xn--80adxhks;
 
-Подставьте свой email:
+    location / {
+        proxy_pass http://127.0.0.1:84;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+```
+
+Альтернатива без хостового nginx: временно освободить 80/443, вернуть в `docker-compose.yml` порты `"80:80"` и `"443:443"`, и следовать схеме certbot из контейнера (как раньше).
+
+Опционально — certbot внутри Docker (нужен свободный порт 80):
 
 ```bash
 docker compose run --rm certbot certonly \
@@ -130,47 +145,41 @@ docker compose run --rm certbot certonly \
 
 ---
 
-## 6. Включение HTTPS
+## 6. Включение HTTPS (через хостовый nginx)
+
+SSL на хосте (рекомендуется при занятых 80/443):
 
 ```bash
-cd /opt/umka
-
-# HTTP → редирект на HTTPS
-cp nginx/default.redirect.conf.example nginx/default.conf
-
-# Включить SSL-конфиг
-mv nginx/default-ssl.conf.disabled nginx/default-ssl.conf
-
-docker compose exec web nginx -t
-docker compose exec web nginx -s reload
+# после добавления server-блока с proxy_pass на 127.0.0.1:84
+certbot --nginx -d xn--80atf1a.xn--80adxhks -d умка.москва
+nginx -t && systemctl reload nginx
 ```
 
-Если `reload` недоступен (контейнер без exec), перезапустите:
+Проверка: `https://умка.москва` (без `:84` — трафик идёт через хостовый nginx на 443).
 
-```bash
-docker compose restart web
-```
-
-Проверка: откройте `https://умка.москва`.
+Включать `default-ssl.conf` внутри Docker-контейнера не нужно, пока 443 не проброшен в контейнер.
 
 ---
 
 ## 7. Автопродление сертификата
 
-Добавьте cron на сервере (`crontab -e`):
+Если сертификат выдан хостовым certbot:
+
+```cron
+0 3 * * 1 certbot renew --quiet && systemctl reload nginx
+```
+
+Если использовали certbot в Docker (порты 80/443 у контейнера):
 
 ```cron
 0 3 * * 1 cd /opt/umka && docker compose run --rm certbot renew && docker compose exec web nginx -s reload
 ```
 
-Раз в неделю в 03:00 — попытка renew и перезагрузка nginx.
-
-Ручное продление:
+Ручное продление (хост):
 
 ```bash
-cd /opt/umka
-docker compose run --rm certbot renew
-docker compose exec web nginx -s reload
+certbot renew
+systemctl reload nginx
 ```
 
 ---
@@ -198,15 +207,15 @@ docker compose down          # остановить
 docker compose up -d --build # запустить / пересобрать
 ```
 
-## Если ошибка: `address already in use` (порт 84 или 443)
+## Если ошибка: `address already in use`
 
-Кто занимает порт:
+Сейчас в compose только порт **84**. Проверка:
 
 ```bash
-ss -tlnp | grep -E ':84|:443'
+ss -tlnp | grep ':84'
 ```
 
-HTTP уже настроен на **84**. Если занят и 443 — либо освободите его (`systemctl stop nginx`), либо уберите строку `"443:443"` из `docker-compose.yml` до настройки SSL.
+Если 84 тоже занят — смените левую часть в `docker-compose.yml` (`"XXXX:80"`) на свободный порт.
 
 ---
 
