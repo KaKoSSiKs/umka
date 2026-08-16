@@ -7,7 +7,7 @@
   <title>УМКА — умная сортировка отходов</title>
   <meta name="description" content="УМКА — умная урна для первичной сортировки отходов на базе искусственного интеллекта и машинного зрения.">
   <link rel="icon" href="assets/favicon.png">
-  <link rel="preload" as="image" href="assets/hero.jpg">
+  <link rel="preload" as="image" href="assets/render.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,18 +15,19 @@
   <div class="bg-orb orb-b"></div>
 
   <header class="nav">
-    <a class="brand" href="#top">
+    <a class="brand" href="#top" aria-label="На главную">
       <img src="assets/logo.png" alt="УМКА">
     </a>
     <nav>
       <a href="#about">О проекте</a>
       <a href="#how">Как работает</a>
-      <a href="#history">История</a>
       <a href="#tech">Технологии</a>
+      <a href="#history">История</a>
       <a href="#roadmap">Развитие</a>
+      <a href="#team">Команда</a>
     </nav>
     <a class="nav-cta" href="#contact">Связаться <span>↗</span></a>
-    <button class="menu" aria-label="Меню"><span></span><span></span></button>
+    <button class="menu" aria-label="Меню" type="button"><span></span><span></span></button>
   </header>
 
   <main id="top">
@@ -48,16 +49,19 @@
       <div class="hero-visual reveal">
         <div class="visual-glow"></div>
         <div class="photo-frame">
-          <img src="assets/hero.jpg" alt="Прототип УМКА во время тестирования">
-          <div class="photo-label"><span class="dot"></span> Рабочий прототип</div>
+          <img src="assets/render.png" alt="3D-рендер умной урны УМКА">
+          <div class="photo-label"><span class="dot"></span> 3D-рендер</div>
         </div>
         <div class="float-card fc-one"><b>YOLOv8</b><small>машинное зрение</small></div>
         <div class="float-card fc-two"><b>4×</b><small>фракции отходов</small></div>
       </div>
     </section>
 
-    <section class="ticker">
-      <div>ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ <span>•</span> МАШИННОЕ ЗРЕНИЕ <span>•</span> ЭКОЛОГИЯ <span>•</span> ИНЖЕНЕРИЯ <span>•</span> ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ <span>•</span> МАШИННОЕ ЗРЕНИЕ <span>•</span></div>
+    <section class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <div class="ticker-group">ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ <span>•</span> МАШИННОЕ ЗРЕНИЕ <span>•</span> ЭКОЛОГИЯ <span>•</span> ИНЖЕНЕРИЯ <span>•</span> РАЗДЕЛЬНЫЙ СБОР <span>•</span> </div>
+        <div class="ticker-group">ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ <span>•</span> МАШИННОЕ ЗРЕНИЕ <span>•</span> ЭКОЛОГИЯ <span>•</span> ИНЖЕНЕРИЯ <span>•</span> РАЗДЕЛЬНЫЙ СБОР <span>•</span> </div>
+      </div>
     </section>
 
     <section class="section intro" id="about">
@@ -103,23 +107,8 @@
       </div>
     </section>
 
-    <section class="section showcase">
-      <div class="showcase-image reveal"><img src="assets/prototype.jpg" alt="Прототип УМКА"></div>
-      <div class="showcase-copy reveal">
-        <div class="section-kicker">03 / Что внутри</div>
-        <h2>Не просто урна.<br><em>Полноценная инженерная система.</em></h2>
-        <p>Команда самостоятельно спроектировала конструкцию, электронику и механизм сортировки. Полная 3D-модель была выполнена в КОМПАС-3D, пластиковые элементы — напечатаны из PETG.</p>
-        <div class="spec-list">
-          <div><span>01</span><b>Raspberry Pi Zero 2 W</b><small>вычислительная платформа</small></div>
-          <div><span>02</span><b>Камера Raspberry Pi</b><small>получение изображения</small></div>
-          <div><span>03</span><b>2 сервопривода Futaba</b><small>привод механизма</small></div>
-          <div><span>04</span><b>YOLOv8</b><small>собственная обученная модель</small></div>
-        </div>
-      </div>
-    </section>
-
     <section class="section gallery-section" id="tech">
-      <div class="section-kicker">04 / Инженерия</div>
+      <div class="section-kicker">03 / Инженерия</div>
       <div class="gallery-head">
         <h2>От идеи<br><em>до работающего прототипа.</em></h2>
         <p>В проекте соединены машинное обучение, 3D-моделирование, электроника, механика и производство.</p>
@@ -134,47 +123,54 @@
     </section>
 
     <section class="section history" id="history">
-      <div class="section-kicker">05 / История проекта</div>
+      <div class="section-kicker">04 / История проекта</div>
       <div class="history-head">
         <h2>Как появилась<br><em>УМКА.</em></h2>
         <p>Проект вырос из идеи сделать первичную сортировку автоматической — и постепенно превратился в полноценный инженерный продукт.</p>
       </div>
-      <div class="timeline">
-        <article class="timeline-item">
-          <div class="time">01</div>
-          <div class="timeline-body">
-            <h3>AISB-SK — начало</h3>
-            <p>Команда сформулировала проблему: раздельный сбор часто не работает из-за человеческого фактора. Так появилась идея умной урны, которая самостоятельно определяет тип отхода.</p>
-          </div>
-        </article>
-        <article class="timeline-item">
-          <div class="time">02</div>
-          <div class="timeline-body">
-            <h3>Первый механизм</h3>
-            <p>Первый прототип использовал подобие кривошипно-шатунного механизма. Он оказался сложным в настройке и недостаточно надёжным, поэтому команда продолжила поиск.</p>
-          </div>
-        </article>
-        <article class="timeline-item">
-          <div class="time">03</div>
-          <div class="timeline-body">
-            <h3>Вторая итерация</h3>
-            <p>Во втором прототипе применили обычную понижающую передачу и изменили компоновку мотора. Решение получилось проще в программировании, настройке и достаточно прочным для тестов.</p>
-          </div>
-        </article>
-        <article class="timeline-item">
-          <div class="time">04</div>
-          <div class="timeline-body">
-            <h3>УМКА — новый этап</h3>
-            <p>Проект получил новое позиционирование: УМКА — продукт для популяризации раздельного сбора. Нейросеть обучена на 5000+ фотографий мусора, а рабочий MVP протестирован в МГ «Сколково».</p>
-          </div>
-        </article>
-        <article class="timeline-item">
-          <div class="time">05</div>
-          <div class="timeline-body">
-            <h3>2026 — признание и масштабирование</h3>
-            <p>Проект был представлен на 13-м Азиатско-Тихоокеанском форуме ООН по устойчивому развитию в Бангкоке. Команда стала победителем курса «Инноватика» и научно-практической конференции SkolStart 2026.</p>
-          </div>
-        </article>
+      <div class="history-layout">
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="time">01</div>
+            <div class="timeline-body">
+              <h3>AISB-SK — начало</h3>
+              <p>Команда сформулировала проблему: раздельный сбор часто не работает из-за человеческого фактора. Так появилась идея умной урны, которая самостоятельно определяет тип отхода.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="time">02</div>
+            <div class="timeline-body">
+              <h3>Первая итерация</h3>
+              <p>Собран первый прототип, обучена нейронная сеть, проведено первое пилотное тестирование в ОЧУ МГ Сколково.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="time">03</div>
+            <div class="timeline-body">
+              <h3>Академия Инноваторов</h3>
+              <p>Проект попал в ТОП-100 проектов Москвы, прошел обучение в Академии Инноваторов, проведено 3+ пилотных тестирований.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="time">04</div>
+            <div class="timeline-body">
+              <h3>УМКА — новый этап</h3>
+              <p>Проект получил новое позиционирование: УМКА — продукт для популяризации раздельного сбора. Нейросеть обучена на 5000+ фотографий мусора.</p>
+            </div>
+          </article>
+          <article class="timeline-item current">
+            <div class="time">05</div>
+            <div class="timeline-body">
+              <h3>Вторая итерация</h3>
+              <p>Разработка второй мультимедийной версии урны.</p>
+            </div>
+          </article>
+        </div>
+        <aside class="history-outcome reveal">
+          <div class="outcome-label">Итог</div>
+          <h3>2026 — признание и масштабирование</h3>
+          <p>Проект был представлен на 13-м Азиатско-Тихоокеанском форуме ООН по устойчивому развитию в Бангкоке. Команда стала победителем курса «Инноватика» от Сколтеха и научно-практической конференции SkolStart 2026. Проект попал в ТОП-100 проектов Москвы и прошел обучение в Академии Инноваторов. Проведено более 3 пилотных тестирований. Зарегистрирована программа ЭВМ.</p>
+        </aside>
       </div>
     </section>
 
@@ -184,29 +180,8 @@
       <div class="stat-big"><span>4</span><p>фракции<br>в одной системе</p></div>
     </section>
 
-    <section class="section market">
-      <div class="section-kicker">06 / Бизнес и масштабирование</div>
-      <div class="market-grid">
-        <div>
-          <h2>Большой рынок.<br><em>Компактное решение.</em></h2>
-          <p>Стартовый сегмент УМКА — офисы, бизнес-центры, школы, вузы и ТЦ. В дальнейшем планируется расширение за счёт увеличения датасета и создания уличной антивандальной версии.</p>
-        </div>
-        <div class="business-card">
-          <div class="bc-row"><span>Цена урны</span><b>≈ 60 000 ₽</b></div>
-          <div class="bc-row"><span>Себестоимость</span><b>≈ 35 000 ₽</b></div>
-          <div class="bc-row"><span>Маржа</span><b>~45%</b></div>
-          <div class="bc-row"><span>SaaS</span><b>≈ 3 000 ₽/мес</b></div>
-        </div>
-      </div>
-      <div class="market-cards">
-        <div><span>Продажа оборудования</span><b>Основной поток выручки</b><p>Серийное производство компактных умных урн.</p></div>
-        <div><span>Сервисная подписка</span><b>Рекуррентный доход</b><p>Аналитика сортировки, ремонт и обновление нейросети.</p></div>
-        <div><span>Брендирование</span><b>Дополнительный доход</b><p>Кастомизация корпуса и рекламные поверхности.</p></div>
-      </div>
-    </section>
-
     <section class="section roadmap" id="roadmap">
-      <div class="section-kicker">07 / Что дальше</div>
+      <div class="section-kicker">05 / Что дальше</div>
       <div class="roadmap-head">
         <h2>От MVP<br><em>к серии.</em></h2>
         <p>Цель следующего этапа — превратить рабочий прототип в продукт, готовый к пилотному внедрению и серийному производству.</p>
@@ -219,22 +194,52 @@
       </div>
     </section>
 
-    <section class="section team">
-      <div class="section-kicker">08 / Команда</div>
+    <section class="section team" id="team">
+      <div class="section-kicker">06 / Команда</div>
       <div class="team-head">
         <h2>Мы строим продукт<br><em>своими руками.</em></h2>
         <p>От 3D-модели и пайки плат до обучения нейросети и публичной защиты — ключевые этапы команда проходила самостоятельно.</p>
       </div>
-      <div class="team-grid">
-        <div class="person lead-person"><div class="avatar">А</div><h3>Никитин Артём Дмитриевич</h3><span>Основатель · лидер · главный инженер</span><p>Инициатор проекта, отвечает за инженерную часть и развитие продукта.</p></div>
-        <div class="person"><div class="avatar blue">А</div><h3>Суханов Артём</h3><span>Инженер</span><p>Конструктив, механика, сборка и наладка установки.</p></div>
-        <div class="person"><div class="avatar green">М</div><h3>Любимова Мария</h3><span>Бренд-менеджер</span><p>Промышленный дизайн, айдентика и продвижение.</p></div>
-        <div class="person mentor"><div class="avatar violet">С</div><h3>Семочкин Алексей Викторович</h3><span>Наставник-педагог</span><p>Сопровождение команды и проектной работы.</p></div>
+      <div class="team-layout">
+        <article class="person lead-person">
+          <div class="lead-photo">
+            <img src="assets/artem.png" alt="Никитин Артём Дмитриевич">
+          </div>
+          <div class="lead-info">
+            <h3>Никитин Артём Дмитриевич</h3>
+            <span class="person-age">15 лет</span>
+            <span class="person-role">Основатель · лидер · главный инженер</span>
+            <p>Инициатор проекта, отвечает за инженерную часть и развитие продукта.</p>
+          </div>
+        </article>
+        <div class="team-members">
+          <article class="person">
+            <div class="avatar blue">А</div>
+            <h3>Суханов Артём</h3>
+            <span class="person-age">14 лет</span>
+            <span class="person-role">Инженер</span>
+            <p>Конструктив, механика, сборка и наладка установки.</p>
+          </article>
+          <article class="person">
+            <div class="avatar green">К</div>
+            <h3>Долгова Ксения</h3>
+            <span class="person-age">14 лет</span>
+            <span class="person-role">Инженер · медиа</span>
+            <p>Корпус, 3D-моделирование и медиасопровождение проекта.</p>
+          </article>
+          <article class="person">
+            <div class="avatar violet">Д</div>
+            <h3>Ковалёв Дмитрий</h3>
+            <span class="person-age">17 лет</span>
+            <span class="person-role">Программист</span>
+            <p>Написание ПО и обучение нейронной сети.</p>
+          </article>
+        </div>
       </div>
     </section>
 
     <section class="section recognition">
-      <div class="section-kicker">09 / Валидация</div>
+      <div class="section-kicker">07 / Валидация</div>
       <h2>Проект уже вышел<br><em>за пределы мастерской.</em></h2>
       <div class="recognition-grid">
         <div><strong>ООН</strong><span>13-й Азиатско-Тихоокеанский форум по устойчивому развитию, Бангкок, 2026</span></div>
