@@ -15,230 +15,237 @@
   <div class="bg-orb orb-b"></div>
 
   <header class="nav">
-    <a class="brand" href="#top" aria-label="На главную">
+    <a class="brand" href="#top" data-i18n-aria="nav.home" aria-label="На главную">
       <img src="assets/logo.png" alt="УМКА" width="180" height="44">
     </a>
     <nav>
-      <a href="#about">О проекте</a>
-      <a href="#how">Как работает</a>
-      <a href="#tech">Технологии</a>
-      <a href="#history">История</a>
-      <a href="#roadmap">Развитие</a>
-      <a href="#team">Команда</a>
+      <a href="#about" data-i18n="nav.about">О проекте</a>
+      <a href="#how" data-i18n="nav.how">Как работает</a>
+      <a href="#tech" data-i18n="nav.tech">Технологии</a>
+      <a href="#history" data-i18n="nav.history">История</a>
+      <a href="#roadmap" data-i18n="nav.roadmap">Развитие</a>
+      <a href="#team" data-i18n="nav.team">Команда</a>
     </nav>
-    <a class="nav-cta" href="#contact">Связаться <span>↗</span></a>
-    <button class="menu" aria-label="Меню" type="button"><span></span><span></span></button>
+    <div class="nav-end">
+      <a class="nav-cta" href="#contact"><span data-i18n="nav.contact">Связаться</span> <span>↗</span></a>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" class="lang-btn is-active" data-set-lang="ru">RU</button>
+        <span class="lang-sep">|</span>
+        <button type="button" class="lang-btn" data-set-lang="en">EN</button>
+      </div>
+      <button class="menu" data-i18n-aria="nav.menu" aria-label="Меню" type="button"><span></span><span></span></button>
+    </div>
   </header>
 
   <main id="top">
     <section class="hero section">
       <div class="hero-copy reveal">
-        <div class="eyebrow"><i></i> Первичная сортировка на базе ИИ</div>
-        <h1>Урна, которая<br><em>сортирует за человека.</em></h1>
-        <p class="lead">УМКА распознаёт отходы камерой и нейросетью и автоматически направляет их в нужный отсек. Просто бросьте — остальное сделает система.</p>
+        <div class="eyebrow"><i></i> <span data-i18n="hero.eyebrow">Первичная сортировка на базе ИИ</span></div>
+        <h1 data-i18n-html="hero.title">Урна, которая<br><em>сортирует за человека.</em></h1>
+        <p class="lead" data-i18n="hero.lead">УМКА распознаёт отходы камерой и нейросетью и автоматически направляет их в нужный отсек. Просто бросьте — остальное сделает система.</p>
         <div class="hero-actions">
-          <a class="btn primary" href="#about">Узнать больше <span>↓</span></a>
-          <a class="btn ghost" href="#contact">Партнёрство <span>↗</span></a>
+          <a class="btn primary" href="#about"><span data-i18n="hero.more">Узнать больше</span> <span>↓</span></a>
+          <a class="btn ghost" href="#contact"><span data-i18n="hero.partner">Партнёрство</span> <span>↗</span></a>
         </div>
         <div class="hero-metrics">
-          <div><strong>до 90%</strong><span>точность</span></div>
-          <div><strong>0,6–1,5 с</strong><span>на бросок</span></div>
-          <div><strong>4</strong><span>фракции</span></div>
+          <div><strong>до 90%</strong><span data-i18n="hero.m1">точность</span></div>
+          <div><strong>0,6–1,5 с</strong><span data-i18n="hero.m2">на бросок</span></div>
+          <div><strong>4</strong><span data-i18n="hero.m3">отсеки</span></div>
         </div>
       </div>
       <div class="hero-visual reveal">
         <div class="visual-glow"></div>
         <div class="hero-render">
-          <img src="assets/render.png" alt="3D-рендер умной урны УМКА">
+          <img src="assets/render.png" data-i18n-alt="hero.renderAlt" alt="3D-рендер умной урны УМКА">
         </div>
-        <div class="photo-label"><span class="dot"></span> 3D-рендер</div>
-        <div class="float-card fc-one"><b>YOLOv8</b><small>машинное зрение</small></div>
-        <div class="float-card fc-two"><b>4×</b><small>фракции отходов</small></div>
+        <div class="photo-label"><span class="dot"></span> <span data-i18n="hero.renderLabel">3D-рендер</span></div>
+        <div class="float-card fc-one"><b>YOLOv8</b><small data-i18n="hero.fc1">машинное зрение</small></div>
+        <div class="float-card fc-two"><b>4×</b><small data-i18n="hero.fc2">отсеки отходов</small></div>
       </div>
     </section>
 
     <section class="ticker" aria-hidden="true">
       <div class="ticker-track">
-        <div class="ticker-seq">ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ · МАШИННОЕ ЗРЕНИЕ · ЭКОЛОГИЯ · ИНЖЕНЕРИЯ · РАЗДЕЛЬНЫЙ СБОР ·&nbsp;</div>
-        <div class="ticker-seq">ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ · МАШИННОЕ ЗРЕНИЕ · ЭКОЛОГИЯ · ИНЖЕНЕРИЯ · РАЗДЕЛЬНЫЙ СБОР ·&nbsp;</div>
+        <div class="ticker-seq" data-i18n="ticker">ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ · МАШИННОЕ ЗРЕНИЕ · ЭКОЛОГИЯ · ИНЖЕНЕРИЯ · РАЗДЕЛЬНЫЙ СБОР ·&nbsp;</div>
+        <div class="ticker-seq" data-i18n="ticker">ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ · МАШИННОЕ ЗРЕНИЕ · ЭКОЛОГИЯ · ИНЖЕНЕРИЯ · РАЗДЕЛЬНЫЙ СБОР ·&nbsp;</div>
       </div>
     </section>
 
     <section class="section intro" id="about">
-      <div class="section-kicker">01 / Зачем это нужно</div>
+      <div class="section-kicker" data-i18n="about.kicker">01 / Зачем это нужно</div>
       <div class="split">
         <div>
-          <h2>Раздельный сбор<br>не должен зависеть<br><em>от человеческого фактора.</em></h2>
+          <h2 data-i18n-html="about.title">Раздельный сбор<br>не должен зависеть<br><em>от человеческого фактора.</em></h2>
         </div>
         <div class="intro-text">
-          <p>УМКА решает проблему неэффективной первичной сортировки отходов. В офисах и учебных учреждениях люди часто путают фракции или не сортируют мусор вовсе — в результате раздельный сбор теряет смысл.</p>
-          <p>Проект превращает сортировку в простой сценарий: человеку не нужно выбирать контейнер. Он выбрасывает отход, а система сама определяет его тип и отправляет в соответствующий отсек.</p>
-          <div class="source-note">Проект ориентирован на офисы, бизнес-центры, школы, вузы и торговые центры.</div>
+          <p data-i18n="about.p1">УМКА решает проблему неэффективной первичной сортировки отходов. В офисах и учебных учреждениях люди часто путают фракции или не сортируют мусор вовсе — в результате раздельный сбор теряет смысл.</p>
+          <p data-i18n="about.p2">Проект превращает сортировку в простой сценарий: человеку не нужно выбирать контейнер. Он выбрасывает отход, а система сама определяет его тип и отправляет в соответствующий отсек.</p>
+          <div class="source-note" data-i18n="about.note">Проект ориентирован на офисы, бизнес-центры, школы, вузы и торговые центры.</div>
         </div>
       </div>
       <div class="numbers-grid">
-        <div class="number-card"><strong>85 млн</strong><span>тонн ТКО образуется<br>в России ежегодно</span></div>
-        <div class="number-card accent"><strong>~65%</strong><span>отходов по-прежнему<br>вывозится на полигоны</span></div>
-        <div class="number-card"><strong>~32%</strong><span>фактически уходит<br>в переработку</span></div>
-        <div class="number-card"><strong>≈320 кг</strong><span>мусора приходится<br>на человека в год</span></div>
+        <div class="number-card"><strong>85 млн</strong><span data-i18n-html="about.n1">тонн ТКО образуется<br>в России ежегодно</span></div>
+        <div class="number-card accent"><strong>~65%</strong><span data-i18n-html="about.n2">отходов по-прежнему<br>вывозится на полигоны</span></div>
+        <div class="number-card"><strong>~32%</strong><span data-i18n-html="about.n3">фактически уходит<br>в переработку</span></div>
+        <div class="number-card"><strong>≈320 кг</strong><span data-i18n-html="about.n4">мусора приходится<br>на человека в год</span></div>
       </div>
     </section>
 
     <section class="section solution" id="how">
-      <div class="section-kicker">02 / Решение</div>
+      <div class="section-kicker" data-i18n="how.kicker">02 / Решение</div>
       <div class="solution-head">
-        <h2>Просто для человека.<br><em>Умно внутри.</em></h2>
-        <p>Внутри компактного корпуса работает связка камеры, нейросети и механизма сортировки.</p>
+        <h2 data-i18n-html="how.title">Просто для человека.<br><em>Умно внутри.</em></h2>
+        <p data-i18n="how.lead">Внутри компактного корпуса работает связка камеры, нейросети и механизма сортировки.</p>
       </div>
       <div class="process">
-        <div class="process-card"><span>01</span><div class="icon">◉</div><h3>Камера видит объект</h3><p>Камера Raspberry Pi получает изображение отхода.</p></div>
+        <div class="process-card"><span>01</span><div class="icon">◉</div><h3 data-i18n="how.s1t">Камера видит объект</h3><p data-i18n="how.s1p">Камера Raspberry Pi получает изображение отхода.</p></div>
         <div class="process-line"></div>
-        <div class="process-card"><span>02</span><div class="icon">⌁</div><h3>Нейросеть определяет тип</h3><p>YOLOv8 классифицирует объект по обученной модели.</p></div>
+        <div class="process-card"><span>02</span><div class="icon">⌁</div><h3 data-i18n="how.s2t">Нейросеть определяет тип</h3><p data-i18n="how.s2p">YOLOv8 классифицирует объект по обученной модели.</p></div>
         <div class="process-line"></div>
-        <div class="process-card"><span>03</span><div class="icon">↻</div><h3>Механизм направляет</h3><p>Привод переводит сортирующий механизм в нужное положение.</p></div>
+        <div class="process-card"><span>03</span><div class="icon">↻</div><h3 data-i18n="how.s3t">Механизм направляет</h3><p data-i18n="how.s3p">Привод переводит сортирующий механизм в нужное положение.</p></div>
         <div class="process-line"></div>
-        <div class="process-card"><span>04</span><div class="icon">✓</div><h3>Мусор — в свой отсек</h3><p>Отход попадает в одну из четырёх фракций.</p></div>
+        <div class="process-card"><span>04</span><div class="icon">✓</div><h3 data-i18n="how.s4t">Мусор — в свой отсек</h3><p data-i18n="how.s4p">Отход попадает в одну из четырёх фракций.</p></div>
       </div>
       <div class="fractions">
-        <div><i class="paper"></i><b>Макулатура</b><small>бумага и картон</small></div>
-        <div><i class="plastic"></i><b>Пластик</b><small>пластиковые отходы</small></div>
-        <div><i class="organic"></i><b>Органика</b><small>органические отходы</small></div>
-        <div><i class="mixed"></i><b>Смешанные</b><small>остальные отходы</small></div>
+        <div><i class="paper"></i><b data-i18n="how.f1">Макулатура</b><small data-i18n="how.f1s">бумага и картон</small></div>
+        <div><i class="plastic"></i><b data-i18n="how.f2">Пластик</b><small data-i18n="how.f2s">пластиковые отходы</small></div>
+        <div><i class="organic"></i><b data-i18n="how.f3">Органика</b><small data-i18n="how.f3s">органические отходы</small></div>
+        <div><i class="mixed"></i><b data-i18n="how.f4">Смешанные</b><small data-i18n="how.f4s">остальные отходы</small></div>
       </div>
     </section>
 
     <section class="section gallery-section" id="tech">
-      <div class="section-kicker">03 / Инженерия</div>
+      <div class="section-kicker" data-i18n="tech.kicker">03 / Инженерия</div>
       <div class="gallery-head">
-        <h2>От идеи<br><em>до работающего прототипа.</em></h2>
-        <p>В проекте соединены машинное обучение, 3D-моделирование, электроника, механика и производство.</p>
+        <h2 data-i18n-html="tech.title">От идеи<br><em>до работающего прототипа.</em></h2>
+        <p data-i18n="tech.lead">В проекте соединены машинное обучение, 3D-моделирование, электроника, механика и производство.</p>
       </div>
       <div class="gallery">
-        <figure class="g-large"><img src="assets/sorting.jpg" alt="Работа системы сортировки"><figcaption>Система в процессе тестирования</figcaption></figure>
-        <figure><img src="assets/mechanism.jpg" alt="Механизм сортировки"><figcaption>Механизм сортировки</figcaption></figure>
-        <figure><img src="assets/cad.jpg" alt="3D-модель конструкции"><figcaption>Проектирование в КОМПАС-3D</figcaption></figure>
-        <figure><img src="assets/electronics.jpg" alt="Электроника прототипа"><figcaption>Электроника и компоновка</figcaption></figure>
-        <figure><img src="assets/sketch.jpg" alt="Эскиз проекта"><figcaption>Первые идеи конструкции</figcaption></figure>
+        <figure class="g-large"><img src="assets/sorting.jpg" data-i18n-alt="tech.a1" alt="Работа системы сортировки"><figcaption data-i18n="tech.c1">Система в процессе тестирования</figcaption></figure>
+        <figure><img src="assets/mechanism.jpg" data-i18n-alt="tech.a2" alt="Механизм сортировки"><figcaption data-i18n="tech.c2">Механизм сортировки</figcaption></figure>
+        <figure><img src="assets/cad.jpg" data-i18n-alt="tech.a3" alt="3D-модель конструкции"><figcaption data-i18n="tech.c3">Проектирование в КОМПАС-3D</figcaption></figure>
+        <figure><img src="assets/electronics.jpg" data-i18n-alt="tech.a4" alt="Электроника прототипа"><figcaption data-i18n="tech.c4">Электроника и компоновка</figcaption></figure>
+        <figure><img src="assets/sketch.jpg" data-i18n-alt="tech.a5" alt="Эскиз проекта"><figcaption data-i18n="tech.c5">Первые идеи конструкции</figcaption></figure>
       </div>
     </section>
 
     <section class="section history" id="history">
-      <div class="section-kicker">04 / История проекта</div>
+      <div class="section-kicker" data-i18n="hist.kicker">04 / История проекта</div>
       <div class="history-head">
-        <h2>Как появилась<br><em>УМКА.</em></h2>
-        <p>Проект вырос из идеи сделать первичную сортировку автоматической — и постепенно превратился в полноценный инженерный продукт.</p>
+        <h2 data-i18n-html="hist.title">Как появилась<br><em>УМКА.</em></h2>
+        <p data-i18n="hist.lead">Проект вырос из идеи сделать первичную сортировку автоматической — и постепенно превратился в полноценный инженерный продукт.</p>
       </div>
       <div class="timeline">
         <article class="timeline-item">
           <div class="time">01</div>
           <div class="timeline-body">
-            <h3>AISB-SK — начало</h3>
-            <p>Команда сформулировала проблему: раздельный сбор часто не работает из-за человеческого фактора. Так появилась идея умной урны, которая самостоятельно определяет тип отхода.</p>
+            <h3 data-i18n="hist.t1">AISB-SK — начало</h3>
+            <p data-i18n="hist.p1">Команда сформулировала проблему: раздельный сбор часто не работает из-за человеческого фактора. Так появилась идея умной урны, которая самостоятельно определяет тип отхода.</p>
           </div>
         </article>
         <article class="timeline-item">
           <div class="time">02</div>
           <div class="timeline-body">
-            <h3>Первая итерация</h3>
-            <p>Собран первый прототип, обучена нейронная сеть, проведено первое пилотное тестирование в ОЧУ МГ Сколково.</p>
+            <h3 data-i18n="hist.t2">Первая итерация</h3>
+            <p data-i18n="hist.p2">Собран первый прототип, обучена нейронная сеть, проведено первое пилотное тестирование в ОЧУ МГ Сколково.</p>
           </div>
         </article>
         <article class="timeline-item">
           <div class="time">03</div>
           <div class="timeline-body">
-            <h3>Академия Инноваторов</h3>
-            <p>Проект попал в ТОП-100 проектов Москвы, прошел обучение в Академии Инноваторов, проведено 3+ пилотных тестирований.</p>
+            <h3 data-i18n="hist.t3">Академия Инноваторов</h3>
+            <p data-i18n="hist.p3">Проект попал в ТОП-100 проектов Москвы, прошел обучение в Академии Инноваторов, проведено 3+ пилотных тестирований.</p>
           </div>
         </article>
         <article class="timeline-item">
           <div class="time">04</div>
           <div class="timeline-body">
-            <h3>УМКА — новый этап</h3>
-            <p>Проект получил новое позиционирование: УМКА — продукт для популяризации раздельного сбора. Нейросеть обучена на 5000+ фотографий мусора.</p>
+            <h3 data-i18n="hist.t4">УМКА — новый этап</h3>
+            <p data-i18n="hist.p4">Проект получил новое позиционирование: УМКА — продукт для популяризации раздельного сбора. Нейросеть обучена на 5000+ фотографий мусора.</p>
           </div>
         </article>
         <article class="timeline-item">
           <div class="time">05</div>
           <div class="timeline-body">
-            <h3>Вторая итерация</h3>
-            <p>Разработка второй мультимедийной версии урны.</p>
+            <h3 data-i18n="hist.t5">Вторая итерация</h3>
+            <p data-i18n="hist.p5">Разработка второй мультимедийной версии урны.</p>
           </div>
         </article>
         <article class="timeline-item outcome current">
           <div class="time">06</div>
           <div class="timeline-body">
-            <div class="outcome-badge">Итог · сейчас</div>
-            <h3>2026 — признание и масштабирование</h3>
-            <p>Проект был представлен на 13-м Азиатско-Тихоокеанском форуме ООН по устойчивому развитию в Бангкоке. Команда стала победителем курса «Инноватика» от Сколтеха и научно-практической конференции SkolStart 2026. Проект попал в ТОП-100 проектов Москвы и прошел обучение в Академии Инноваторов. Проведено более 3 пилотных тестирований. Зарегистрирована программа ЭВМ.</p>
+            <div class="outcome-badge" data-i18n="hist.badge">Итог · сейчас</div>
+            <h3 data-i18n="hist.t6">2026 — признание и масштабирование</h3>
+            <p data-i18n="hist.p6">Проект был представлен на 13-м Азиатско-Тихоокеанском форуме ООН по устойчивому развитию в Бангкоке. Команда стала победителем курса «Инноватика» от Сколтеха и научно-практической конференции SkolStart 2026. Проект попал в ТОП-100 проектов Москвы и прошел обучение в Академии Инноваторов. Проведено более 3 пилотных тестирований. Зарегистрирована программа ЭВМ.</p>
           </div>
         </article>
       </div>
     </section>
 
     <section class="section stats">
-      <div class="stat-big"><span>5000+</span><p>фотографий мусора<br>в обучающем датасете</p></div>
-      <div class="stat-big"><span>до 90%</span><p>заявленная точность<br>классификации</p></div>
-      <div class="stat-big"><span>4</span><p>фракции<br>в одной системе</p></div>
+      <div class="stat-big"><span>5000+</span><p data-i18n-html="stats.s1">фотографий мусора<br>в обучающем датасете</p></div>
+      <div class="stat-big"><span>до 90%</span><p data-i18n-html="stats.s2">заявленная точность<br>классификации</p></div>
+      <div class="stat-big"><span>4</span><p data-i18n-html="stats.s3">отсеки<br>в одной системе</p></div>
     </section>
 
     <section class="section roadmap" id="roadmap">
-      <div class="section-kicker">05 / Что дальше</div>
+      <div class="section-kicker" data-i18n="road.kicker">05 / Что дальше</div>
       <div class="roadmap-head">
-        <h2>От MVP<br><em>к серии.</em></h2>
-        <p>Цель следующего этапа — превратить рабочий прототип в продукт, готовый к пилотному внедрению и серийному производству.</p>
+        <h2 data-i18n-html="road.title">От MVP<br><em>к серии.</em></h2>
+        <p data-i18n="road.lead">Цель следующего этапа — превратить рабочий прототип в продукт, готовый к пилотному внедрению и серийному производству.</p>
       </div>
       <div class="roadmap-line">
-        <div class="road"><span>Сейчас</span><h3>2026</h3><p>Рабочий MVP, УГТ 4–5. Доработка ПО, нейросети и серийной конструкции.</p></div>
-        <div class="road active"><span>Следующий шаг</span><h3>Q3–Q4 2026</h3><p>Формализация бизнеса: регистрация МИП/ООО с вузом и подготовка серийной версии.</p></div>
-        <div class="road"><span>Пилот</span><h3>2027</h3><p>Первая партия — 50 урн. Пилотное внедрение в общественных местах. Целевой УГТ 8.</p></div>
-        <div class="road"><span>Масштаб</span><h3>Далее</h3><p>Серийное производство и уличная антивандальная версия.</p></div>
+        <div class="road"><span data-i18n="road.l1">Сейчас</span><h3>2026</h3><p data-i18n="road.p1">Рабочий MVP, УГТ 4–5. Доработка ПО, нейросети и серийной конструкции.</p></div>
+        <div class="road active"><span data-i18n="road.l2">Следующий шаг</span><h3>Q3–Q4 2026</h3><p data-i18n="road.p2">Формализация бизнеса: регистрация МИП/ООО с вузом и подготовка серийной версии.</p></div>
+        <div class="road"><span data-i18n="road.l3">Пилот</span><h3>2027</h3><p data-i18n="road.p3">Первая партия — 50 урн. Пилотное внедрение в общественных местах. Целевой УГТ 8.</p></div>
+        <div class="road"><span data-i18n="road.l4">Масштаб</span><h3 data-i18n="road.h4">Далее</h3><p data-i18n="road.p4">Серийное производство и уличная антивандальная версия.</p></div>
       </div>
     </section>
 
     <section class="section team" id="team">
-      <div class="section-kicker">06 / Команда</div>
+      <div class="section-kicker" data-i18n="team.kicker">06 / Команда</div>
       <div class="team-head">
-        <h2>Мы строим продукт<br><em>своими руками.</em></h2>
-        <p>От 3D-модели и пайки плат до обучения нейросети и публичной защиты — ключевые этапы команда проходила самостоятельно.</p>
+        <h2 data-i18n-html="team.title">Мы строим продукт<br><em>своими руками.</em></h2>
+        <p data-i18n="team.lead">От 3D-модели и пайки плат до обучения нейросети и публичной защиты — ключевые этапы команда проходила самостоятельно.</p>
       </div>
       <div class="team-layout">
         <article class="lead-card">
           <div class="lead-photo">
-            <img src="assets/artem.png" alt="Никитин Артём Дмитриевич">
+            <img src="assets/artem.png" data-i18n-alt="team.a1" alt="Никитин Артём Дмитриевич">
           </div>
           <div class="lead-body">
-            <h3>Никитин Артём Дмитриевич</h3>
-            <span class="person-age">15 лет</span>
-            <span class="person-role">Основатель · лидер · главный инженер</span>
-            <p>Инициатор проекта, отвечает за инженерную часть и развитие продукта.</p>
+            <h3 data-i18n="team.n1">Никитин Артём Дмитриевич</h3>
+            <span class="person-age" data-i18n="team.age15">15 лет</span>
+            <span class="person-role" data-i18n="team.r1">Основатель · лидер · главный инженер</span>
+            <p data-i18n="team.d1">Инициатор проекта, отвечает за инженерную часть и развитие продукта.</p>
           </div>
         </article>
         <div class="team-members">
           <article class="person">
             <div class="avatar blue">А</div>
             <div class="person-copy">
-              <h3>Суханов Артём</h3>
-              <span class="person-age">14 лет</span>
-              <span class="person-role">Инженер</span>
-              <p>Конструктив, механика, сборка и наладка установки.</p>
+              <h3 data-i18n="team.n2">Суханов Артём</h3>
+              <span class="person-age" data-i18n="team.age14">14 лет</span>
+              <span class="person-role" data-i18n="team.r2">Инженер</span>
+              <p data-i18n="team.d2">Конструктив, механика, сборка и наладка установки.</p>
             </div>
           </article>
           <article class="person">
             <div class="avatar green">К</div>
             <div class="person-copy">
-              <h3>Долгова Ксения</h3>
-              <span class="person-age">14 лет</span>
-              <span class="person-role">Инженер · медиа</span>
-              <p>Корпус, 3D-моделирование и медиасопровождение проекта.</p>
+              <h3 data-i18n="team.n3">Долгова Ксения</h3>
+              <span class="person-age" data-i18n="team.age14">14 лет</span>
+              <span class="person-role" data-i18n="team.r3">Инженер · медиа</span>
+              <p data-i18n="team.d3">Корпус, 3D-моделирование и медиасопровождение проекта.</p>
             </div>
           </article>
           <article class="person">
             <div class="avatar violet">Д</div>
             <div class="person-copy">
-              <h3>Ковалёв Дмитрий</h3>
-              <span class="person-age">17 лет</span>
-              <span class="person-role">Программист</span>
-              <p>Написание ПО и обучение нейронной сети.</p>
+              <h3 data-i18n="team.n4">Ковалёв Дмитрий</h3>
+              <span class="person-age" data-i18n="team.age15">15 лет</span>
+              <span class="person-role" data-i18n="team.r4">Программист</span>
+              <p data-i18n="team.d4">Написание ПО и обучение нейронной сети.</p>
             </div>
           </article>
         </div>
@@ -246,27 +253,27 @@
     </section>
 
     <section class="section recognition">
-      <div class="section-kicker">07 / Валидация</div>
-      <h2>Проект уже вышел<br><em>за пределы мастерской.</em></h2>
+      <div class="section-kicker" data-i18n="val.kicker">07 / Валидация</div>
+      <h2 data-i18n-html="val.title">Проект уже вышел<br><em>за пределы мастерской.</em></h2>
       <div class="recognition-grid">
-        <div><strong>ООН</strong><span>13-й Азиатско-Тихоокеанский форум по устойчивому развитию, Бангкок, 2026</span></div>
-        <div><strong>Инноватика</strong><span>Победители курса «Инноватика», 2026</span></div>
-        <div><strong>SkolStart</strong><span>Победители VI научно-практической конференции, 2026</span></div>
-        <div><strong>МГ «Сколково»</strong><span>Рабочий MVP собран и протестирован в учебном заведении</span></div>
+        <div><strong data-i18n="val.t1">Сколтех</strong><span data-i18n="val.d1">Победители образовательного курса «Инноватика» от Сколтеха, 2026.</span></div>
+        <div><strong data-i18n="val.t2">Реальные условия</strong><span data-i18n="val.d2">Проведено более 3 пилотных тестирований в реальных условиях на территории Москвы.</span></div>
+        <div><strong data-i18n="val.t3">Академия Инноваторов</strong><span data-i18n="val.d3">Проект попал в ТОП-100 проектов Москвы и прошел обучение в Академии Инноваторов.</span></div>
+        <div><strong data-i18n="val.t4">ООН</strong><span data-i18n="val.d4">13-й Азиатско-Тихоокеанский форум по устойчивому развитию, Бангкок, 2026</span></div>
       </div>
     </section>
 
     <section class="section contact" id="contact">
       <div class="contact-box">
         <div class="contact-copy">
-          <div class="eyebrow"><i></i> УМКА / 2026</div>
-          <h2>Давайте сделаем<br><em>сортировку массовой.</em></h2>
-          <p>Проект открыт к пилотным внедрениям, партнёрствам и поддержке масштабирования первой серийной партии.</p>
+          <div class="eyebrow"><i></i> <span data-i18n="contact.eyebrow">УМКА / 2026</span></div>
+          <h2 data-i18n-html="contact.title">Давайте сделаем<br><em>сортировку массовой.</em></h2>
+          <p data-i18n="contact.lead">Проект открыт к пилотным внедрениям, партнёрствам и поддержке масштабирования первой серийной партии.</p>
         </div>
         <div class="contact-actions">
           <a class="contact-link" href="mailto:artn1.5@yandex.ru"><small>E-mail</small><span>artn1.5@yandex.ru ↗</span></a>
-          <a class="contact-link" href="https://t.me/AIartemN" target="_blank" rel="noopener"><small>Telegram основателя</small><span>@AIartemN ↗</span></a>
-          <a class="contact-link" href="https://t.me/AISB_SK" target="_blank" rel="noopener"><small>Канал проекта</small><span>@AISB_SK ↗</span></a>
+          <a class="contact-link" href="https://t.me/AIartemN" target="_blank" rel="noopener"><small data-i18n="contact.tg">Telegram основателя</small><span>@AIartemN ↗</span></a>
+          <a class="contact-link" href="https://t.me/AISB_SK" target="_blank" rel="noopener"><small data-i18n="contact.ch">Канал проекта</small><span>@AISB_SK ↗</span></a>
         </div>
       </div>
     </section>
@@ -274,10 +281,11 @@
 
   <footer>
     <div class="footer-brand"><img src="assets/logo.png" alt="УМКА" width="160" height="40"></div>
-    <span>Первичная сортировка мусора на базе искусственного интеллекта</span>
+    <span data-i18n="footer.copy">Первичная сортировка мусора на базе искусственного интеллекта</span>
     <span>© 2026</span>
   </footer>
 
+  <script src="i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

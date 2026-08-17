@@ -1,0 +1,322 @@
+window.UMKA_I18N = {
+  ru: {
+    meta: {
+      title: "УМКА — умная сортировка отходов",
+      description: "УМКА — умная урна для первичной сортировки отходов на базе искусственного интеллекта и машинного зрения."
+    },
+    nav: {
+      home: "На главную",
+      about: "О проекте",
+      how: "Как работает",
+      tech: "Технологии",
+      history: "История",
+      roadmap: "Развитие",
+      team: "Команда",
+      contact: "Связаться",
+      menu: "Меню"
+    },
+    hero: {
+      eyebrow: "Первичная сортировка на базе ИИ",
+      title: "Урна, которая<br><em>сортирует за человека.</em>",
+      lead: "УМКА распознаёт отходы камерой и нейросетью и автоматически направляет их в нужный отсек. Просто бросьте — остальное сделает система.",
+      more: "Узнать больше",
+      partner: "Партнёрство",
+      m1: "точность",
+      m2: "на бросок",
+      m3: "отсеки",
+      renderAlt: "3D-рендер умной урны УМКА",
+      renderLabel: "3D-рендер",
+      fc1: "машинное зрение",
+      fc2: "отсеки отходов"
+    },
+    ticker: "ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ · МАШИННОЕ ЗРЕНИЕ · ЭКОЛОГИЯ · ИНЖЕНЕРИЯ · РАЗДЕЛЬНЫЙ СБОР ·\u00a0",
+    about: {
+      kicker: "01 / Зачем это нужно",
+      title: "Раздельный сбор<br>не должен зависеть<br><em>от человеческого фактора.</em>",
+      p1: "УМКА решает проблему неэффективной первичной сортировки отходов. В офисах и учебных учреждениях люди часто путают фракции или не сортируют мусор вовсе — в результате раздельный сбор теряет смысл.",
+      p2: "Проект превращает сортировку в простой сценарий: человеку не нужно выбирать контейнер. Он выбрасывает отход, а система сама определяет его тип и отправляет в соответствующий отсек.",
+      note: "Проект ориентирован на офисы, бизнес-центры, школы, вузы и торговые центры.",
+      n1: "тонн ТКО образуется<br>в России ежегодно",
+      n2: "отходов по-прежнему<br>вывозится на полигоны",
+      n3: "фактически уходит<br>в переработку",
+      n4: "мусора приходится<br>на человека в год"
+    },
+    how: {
+      kicker: "02 / Решение",
+      title: "Просто для человека.<br><em>Умно внутри.</em>",
+      lead: "Внутри компактного корпуса работает связка камеры, нейросети и механизма сортировки.",
+      s1t: "Камера видит объект",
+      s1p: "Камера Raspberry Pi получает изображение отхода.",
+      s2t: "Нейросеть определяет тип",
+      s2p: "YOLOv8 классифицирует объект по обученной модели.",
+      s3t: "Механизм направляет",
+      s3p: "Привод переводит сортирующий механизм в нужное положение.",
+      s4t: "Мусор — в свой отсек",
+      s4p: "Отход попадает в одну из четырёх фракций.",
+      f1: "Макулатура",
+      f1s: "бумага и картон",
+      f2: "Пластик",
+      f2s: "пластиковые отходы",
+      f3: "Органика",
+      f3s: "органические отходы",
+      f4: "Смешанные",
+      f4s: "остальные отходы"
+    },
+    tech: {
+      kicker: "03 / Инженерия",
+      title: "От идеи<br><em>до работающего прототипа.</em>",
+      lead: "В проекте соединены машинное обучение, 3D-моделирование, электроника, механика и производство.",
+      a1: "Работа системы сортировки",
+      c1: "Система в процессе тестирования",
+      a2: "Механизм сортировки",
+      c2: "Механизм сортировки",
+      a3: "3D-модель конструкции",
+      c3: "Проектирование в КОМПАС-3D",
+      a4: "Электроника прототипа",
+      c4: "Электроника и компоновка",
+      a5: "Эскиз проекта",
+      c5: "Первые идеи конструкции"
+    },
+    hist: {
+      kicker: "04 / История проекта",
+      title: "Как появилась<br><em>УМКА.</em>",
+      lead: "Проект вырос из идеи сделать первичную сортировку автоматической — и постепенно превратился в полноценный инженерный продукт.",
+      t1: "AISB-SK — начало",
+      p1: "Команда сформулировала проблему: раздельный сбор часто не работает из-за человеческого фактора. Так появилась идея умной урны, которая самостоятельно определяет тип отхода.",
+      t2: "Первая итерация",
+      p2: "Собран первый прототип, обучена нейронная сеть, проведено первое пилотное тестирование в ОЧУ МГ Сколково.",
+      t3: "Академия Инноваторов",
+      p3: "Проект попал в ТОП-100 проектов Москвы, прошел обучение в Академии Инноваторов, проведено 3+ пилотных тестирований.",
+      t4: "УМКА — новый этап",
+      p4: "Проект получил новое позиционирование: УМКА — продукт для популяризации раздельного сбора. Нейросеть обучена на 5000+ фотографий мусора.",
+      t5: "Вторая итерация",
+      p5: "Разработка второй мультимедийной версии урны.",
+      badge: "Итог · сейчас",
+      t6: "2026 — признание и масштабирование",
+      p6: "Проект был представлен на 13-м Азиатско-Тихоокеанском форуме ООН по устойчивому развитию в Бангкоке. Команда стала победителем курса «Инноватика» от Сколтеха и научно-практической конференции SkolStart 2026. Проект попал в ТОП-100 проектов Москвы и прошел обучение в Академии Инноваторов. Проведено более 3 пилотных тестирований. Зарегистрирована программа ЭВМ."
+    },
+    stats: {
+      s1: "фотографий мусора<br>в обучающем датасете",
+      s2: "заявленная точность<br>классификации",
+      s3: "отсеки<br>в одной системе"
+    },
+    road: {
+      kicker: "05 / Что дальше",
+      title: "От MVP<br><em>к серии.</em>",
+      lead: "Цель следующего этапа — превратить рабочий прототип в продукт, готовый к пилотному внедрению и серийному производству.",
+      l1: "Сейчас",
+      p1: "Рабочий MVP, УГТ 4–5. Доработка ПО, нейросети и серийной конструкции.",
+      l2: "Следующий шаг",
+      p2: "Формализация бизнеса: регистрация МИП/ООО с вузом и подготовка серийной версии.",
+      l3: "Пилот",
+      p3: "Первая партия — 50 урн. Пилотное внедрение в общественных местах. Целевой УГТ 8.",
+      l4: "Масштаб",
+      h4: "Далее",
+      p4: "Серийное производство и уличная антивандальная версия."
+    },
+    team: {
+      kicker: "06 / Команда",
+      title: "Мы строим продукт<br><em>своими руками.</em>",
+      lead: "От 3D-модели и пайки плат до обучения нейросети и публичной защиты — ключевые этапы команда проходила самостоятельно.",
+      a1: "Никитин Артём Дмитриевич",
+      n1: "Никитин Артём Дмитриевич",
+      age15: "15 лет",
+      age14: "14 лет",
+      r1: "Основатель · лидер · главный инженер",
+      d1: "Инициатор проекта, отвечает за инженерную часть и развитие продукта.",
+      n2: "Суханов Артём",
+      r2: "Инженер",
+      d2: "Конструктив, механика, сборка и наладка установки.",
+      n3: "Долгова Ксения",
+      r3: "Инженер · медиа",
+      d3: "Корпус, 3D-моделирование и медиасопровождение проекта.",
+      n4: "Ковалёв Дмитрий",
+      r4: "Программист",
+      d4: "Написание ПО и обучение нейронной сети."
+    },
+    val: {
+      kicker: "07 / Валидация",
+      title: "Проект уже вышел<br><em>за пределы мастерской.</em>",
+      t1: "Сколтех",
+      d1: "Победители образовательного курса «Инноватика» от Сколтеха, 2026.",
+      t2: "Реальные условия",
+      d2: "Проведено более 3 пилотных тестирований в реальных условиях на территории Москвы.",
+      t3: "Академия Инноваторов",
+      d3: "Проект попал в ТОП-100 проектов Москвы и прошел обучение в Академии Инноваторов.",
+      t4: "ООН",
+      d4: "13-й Азиатско-Тихоокеанский форум по устойчивому развитию, Бангкок, 2026"
+    },
+    contact: {
+      eyebrow: "УМКА / 2026",
+      title: "Давайте сделаем<br><em>сортировку массовой.</em>",
+      lead: "Проект открыт к пилотным внедрениям, партнёрствам и поддержке масштабирования первой серийной партии.",
+      tg: "Telegram основателя",
+      ch: "Канал проекта"
+    },
+    footer: {
+      copy: "Первичная сортировка мусора на базе искусственного интеллекта"
+    }
+  },
+  en: {
+    meta: {
+      title: "UMKA — smart waste sorting",
+      description: "UMKA is a smart bin for primary waste sorting powered by artificial intelligence and computer vision."
+    },
+    nav: {
+      home: "Back to top",
+      about: "About",
+      how: "How it works",
+      tech: "Technology",
+      history: "History",
+      roadmap: "Roadmap",
+      team: "Team",
+      contact: "Contact",
+      menu: "Menu"
+    },
+    hero: {
+      eyebrow: "AI-powered primary sorting",
+      title: "A bin that<br><em>sorts for you.</em>",
+      lead: "UMKA recognizes waste with a camera and neural network and automatically sends it to the right compartment. Just drop it in — the system does the rest.",
+      more: "Learn more",
+      partner: "Partnership",
+      m1: "accuracy",
+      m2: "per drop",
+      m3: "compartments",
+      renderAlt: "3D render of the UMKA smart bin",
+      renderLabel: "3D render",
+      fc1: "computer vision",
+      fc2: "waste compartments"
+    },
+    ticker: "ARTIFICIAL INTELLIGENCE · COMPUTER VISION · ECOLOGY · ENGINEERING · SEPARATE COLLECTION ·\u00a0",
+    about: {
+      kicker: "01 / Why it matters",
+      title: "Separate collection<br>should not depend<br><em>on the human factor.</em>",
+      p1: "UMKA solves inefficient primary waste sorting. In offices and schools people often mix fractions or skip sorting altogether — so separate collection loses its meaning.",
+      p2: "The project turns sorting into a simple action: you do not choose a container. You drop the waste, and the system identifies the type and sends it to the matching compartment.",
+      note: "The project targets offices, business centers, schools, universities and shopping malls.",
+      n1: "tons of municipal waste<br>generated in Russia yearly",
+      n2: "of waste still goes<br>to landfills",
+      n3: "actually goes<br>to recycling",
+      n4: "of waste per person<br>each year"
+    },
+    how: {
+      kicker: "02 / Solution",
+      title: "Simple for people.<br><em>Smart inside.</em>",
+      lead: "A compact housing holds a camera, a neural network and a sorting mechanism.",
+      s1t: "The camera sees the object",
+      s1p: "A Raspberry Pi camera captures an image of the waste.",
+      s2t: "The network identifies the type",
+      s2p: "YOLOv8 classifies the object with a custom-trained model.",
+      s3t: "The mechanism directs it",
+      s3p: "A drive moves the sorter into the right position.",
+      s4t: "Waste goes to its compartment",
+      s4p: "The item lands in one of four fractions.",
+      f1: "Paper",
+      f1s: "paper and cardboard",
+      f2: "Plastic",
+      f2s: "plastic waste",
+      f3: "Organic",
+      f3s: "organic waste",
+      f4: "Mixed",
+      f4s: "other waste"
+    },
+    tech: {
+      kicker: "03 / Engineering",
+      title: "From idea<br><em>to a working prototype.</em>",
+      lead: "The project combines machine learning, 3D modeling, electronics, mechanics and manufacturing.",
+      a1: "Sorting system in action",
+      c1: "System during testing",
+      a2: "Sorting mechanism",
+      c2: "Sorting mechanism",
+      a3: "3D model of the structure",
+      c3: "Designed in KOMPAS-3D",
+      a4: "Prototype electronics",
+      c4: "Electronics and layout",
+      a5: "Project sketch",
+      c5: "First design ideas"
+    },
+    hist: {
+      kicker: "04 / Project history",
+      title: "How<br><em>UMKA</em> began.",
+      lead: "The project grew from the idea of automating primary sorting — and became a full engineering product.",
+      t1: "AISB-SK — the start",
+      p1: "The team framed the problem: separate collection often fails because of the human factor. That is how the idea of a smart bin that identifies waste on its own appeared.",
+      t2: "First iteration",
+      p2: "The first prototype was built, the neural network was trained, and the first pilot test ran at OCHU MG Skolkovo.",
+      t3: "Academy of Innovators",
+      p3: "The project entered Moscow’s TOP-100, completed training at the Academy of Innovators, and ran 3+ pilot tests.",
+      t4: "UMKA — a new stage",
+      p4: "The project got a new positioning: UMKA is a product that popularizes separate collection. The neural network is trained on 5,000+ photos of waste.",
+      t5: "Second iteration",
+      p5: "Development of the second multimedia version of the bin.",
+      badge: "Outcome · now",
+      t6: "2026 — recognition and scale",
+      p6: "The project was presented at the 13th UN Asia-Pacific Forum on Sustainable Development in Bangkok. The team won Skoltech’s Innovatics course and the SkolStart 2026 conference. It entered Moscow’s TOP-100 and trained at the Academy of Innovators. More than 3 pilot tests were completed. A computer program was registered."
+    },
+    stats: {
+      s1: "waste photos<br>in the training dataset",
+      s2: "claimed classification<br>accuracy",
+      s3: "compartments<br>in one system"
+    },
+    road: {
+      kicker: "05 / What’s next",
+      title: "From MVP<br><em>to series.</em>",
+      lead: "The next stage is to turn the working prototype into a product ready for a pilot rollout and serial production.",
+      l1: "Now",
+      p1: "Working MVP, TRL 4–5. Software, neural network and serial design still in progress.",
+      l2: "Next step",
+      p2: "Business setup: registering a university spin-off / LLC and preparing the serial version.",
+      l3: "Pilot",
+      p3: "First batch — 50 bins. Pilot deployment in public spaces. Target TRL 8.",
+      l4: "Scale",
+      h4: "Later",
+      p4: "Serial production and an outdoor vandal-resistant version."
+    },
+    team: {
+      kicker: "06 / Team",
+      title: "We build the product<br><em>with our own hands.</em>",
+      lead: "From 3D models and soldering boards to training the network and public defense — the team did the key stages itself.",
+      a1: "Nikitin Artem Dmitrievich",
+      n1: "Nikitin Artem Dmitrievich",
+      age15: "15 years old",
+      age14: "14 years old",
+      r1: "Founder · leader · chief engineer",
+      d1: "Project initiator, responsible for engineering and product development.",
+      n2: "Sukhanov Artem",
+      r2: "Engineer",
+      d2: "Structure, mechanics, assembly and commissioning.",
+      n3: "Dolgova Ksenia",
+      r3: "Engineer · media",
+      d3: "Housing, 3D modeling and media support.",
+      n4: "Kovalev Dmitry",
+      r4: "Programmer",
+      d4: "Software development and neural network training."
+    },
+    val: {
+      kicker: "07 / Validation",
+      title: "The project has already gone<br><em>beyond the workshop.</em>",
+      t1: "Skoltech",
+      d1: "Winners of Skoltech’s Innovatics educational course, 2026.",
+      t2: "Real conditions",
+      d2: "More than 3 pilot tests in real conditions across Moscow.",
+      t3: "Academy of Innovators",
+      d3: "Entered Moscow’s TOP-100 projects and completed training at the Academy of Innovators.",
+      t4: "UN",
+      d4: "13th UN Asia-Pacific Forum on Sustainable Development, Bangkok, 2026"
+    },
+    contact: {
+      eyebrow: "UMKA / 2026",
+      title: "Let’s make<br><em>sorting mainstream.</em>",
+      lead: "The project is open to pilot deployments, partnerships and support for scaling the first serial batch.",
+      tg: "Founder’s Telegram",
+      ch: "Project channel"
+    },
+    footer: {
+      copy: "Primary waste sorting powered by artificial intelligence"
+    }
+  }
+};
+
+window.lookupI18n = function lookupI18n(dict, path) {
+  return path.split(".").reduce((acc, key) => (acc == null ? acc : acc[key]), dict);
+};
