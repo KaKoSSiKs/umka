@@ -21,13 +21,15 @@ window.UMKA_I18N = {
       lead: "УМКА распознаёт отходы камерой и нейросетью и автоматически направляет их в нужный отсек. Просто бросьте — остальное сделает система.",
       more: "Узнать больше",
       partner: "Партнёрство",
+      v1: "до 90%",
+      v2: "0,6–1,5 с",
       m1: "точность",
       m2: "на бросок",
-      m3: "отсеки",
+      m3: "отсека",
       renderAlt: "3D-рендер умной урны УМКА",
       renderLabel: "3D-рендер",
       fc1: "машинное зрение",
-      fc2: "отсеки отходов"
+      fc2: "отсека отходов"
     },
     ticker: "ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ · МАШИННОЕ ЗРЕНИЕ · ЭКОЛОГИЯ · ИНЖЕНЕРИЯ · РАЗДЕЛЬНЫЙ СБОР ·\u00a0",
     about: {
@@ -36,9 +38,11 @@ window.UMKA_I18N = {
       p1: "УМКА решает проблему неэффективной первичной сортировки отходов. В офисах и учебных учреждениях люди часто путают фракции или не сортируют мусор вовсе — в результате раздельный сбор теряет смысл.",
       p2: "Проект превращает сортировку в простой сценарий: человеку не нужно выбирать контейнер. Он выбрасывает отход, а система сама определяет его тип и отправляет в соответствующий отсек.",
       note: "Проект ориентирован на офисы, бизнес-центры, школы, вузы и торговые центры.",
+      v1: "85 млн",
       n1: "тонн ТКО образуется<br>в России ежегодно",
       n2: "отходов по-прежнему<br>вывозится на полигоны",
       n3: "фактически уходит<br>в переработку",
+      v4: "≈320 кг",
       n4: "мусора приходится<br>на человека в год"
     },
     how: {
@@ -67,7 +71,7 @@ window.UMKA_I18N = {
       title: "От идеи<br><em>до работающего прототипа.</em>",
       lead: "В проекте соединены машинное обучение, 3D-моделирование, электроника, механика и производство.",
       a1: "Работа системы сортировки",
-      c1: "Система в процессе тестирования",
+      c1: "Пилотное тестирование",
       a2: "Механизм сортировки",
       c2: "Механизм сортировки",
       a3: "3D-модель конструкции",
@@ -97,6 +101,7 @@ window.UMKA_I18N = {
     },
     stats: {
       s1: "фотографий мусора<br>в обучающем датасете",
+      v2: "до 90%",
       s2: "заявленная точность<br>классификации",
       s3: "отсеки<br>в одной системе"
     },
@@ -179,8 +184,10 @@ window.UMKA_I18N = {
       lead: "UMKA recognizes waste with a camera and neural network and automatically sends it to the right compartment. Just drop it in — the system does the rest.",
       more: "Learn more",
       partner: "Partnership",
+      v1: "up to 90%",
+      v2: "0.6-1.5 sec",
       m1: "accuracy",
-      m2: "per drop",
+      m2: "per item",
       m3: "compartments",
       renderAlt: "3D render of the UMKA smart bin",
       renderLabel: "3D render",
@@ -194,10 +201,12 @@ window.UMKA_I18N = {
       p1: "UMKA solves inefficient primary waste sorting. In offices and schools people often mix fractions or skip sorting altogether — so separate collection loses its meaning.",
       p2: "The project turns sorting into a simple action: you do not choose a container. You drop the waste, and the system identifies the type and sends it to the matching compartment.",
       note: "The project targets offices, business centers, schools, universities and shopping malls.",
-      n1: "tons of municipal waste<br>generated in Russia yearly",
-      n2: "of waste still goes<br>to landfills",
+      v1: "85M",
+      n1: "million tons of municipal waste<br>generated in Russia every year",
+      n2: "of waste still sent<br>to landfills",
       n3: "actually goes<br>to recycling",
-      n4: "of waste per person<br>each year"
+      v4: "~320 kg",
+      n4: "of waste per person<br>every year"
     },
     how: {
       kicker: "02 / Solution",
@@ -225,7 +234,7 @@ window.UMKA_I18N = {
       title: "From idea<br><em>to a working prototype.</em>",
       lead: "The project combines machine learning, 3D modeling, electronics, mechanics and manufacturing.",
       a1: "Sorting system in action",
-      c1: "System during testing",
+      c1: "Pilot testing",
       a2: "Sorting mechanism",
       c2: "Sorting mechanism",
       a3: "3D model of the structure",
@@ -255,6 +264,7 @@ window.UMKA_I18N = {
     },
     stats: {
       s1: "waste photos<br>in the training dataset",
+      v2: "up to 90%",
       s2: "claimed classification<br>accuracy",
       s3: "compartments<br>in one system"
     },
